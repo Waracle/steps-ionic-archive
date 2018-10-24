@@ -429,9 +429,12 @@ func main() {
 
 			platformVersion := platform
 			pv := getField(configs, "Cordova"+strings.Title(platform)+"Version")
+			// Handle master, the full git url, latest or specific version
 			if pv == "master" {
 				platformVersion = "https://github.com/apache/cordova-" + platform + ".git"
-			} else if pv != "" {
+			} else if (strings.HasPrefix("pv", "https") || strings.HasPrefix("pv", "git") ) {
+                platformVersion = pv
+            } else if pv != "" {
 				platformVersion = platform + "@" + pv
 			}
 

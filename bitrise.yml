@@ -6,7 +6,12 @@ app:
   - STEP_VERSION: 1.2.4
   - SAMPLE_APP_URL: https://github.com/bitrise-samples/ionic-conference-app.git
   - BRANCH: master
-
+  - CORDOVA_IOS_VERSION:
+    opts:
+      is_expand: false
+  - CORDOVA_ANDROID_VERSION: git+https://github.com/apache/cordova-android.git#7.1.x
+    opts:
+      is_expand: false
 workflows:
   test:
     before_run:

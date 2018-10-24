@@ -113,7 +113,7 @@ inputs:
 
         If value is set to `latest`, the step will update to the latest cordova version.
         Leave this input empty to use the preinstalled cordova version.
-  - cordova_ios_version: 
+  - cordova_ios_version: "${CORDOVA_IOS_VERSION}"
     opts:
       title: "iOS version"
       description: |-
@@ -128,7 +128,7 @@ inputs:
         - latest - The step will update to the latest cordova-ios version `ionic cordova platform add ios@latest`.
 
         - empty - Uses the pinned cordova-ios version.
-  - cordova_android_version: 
+  - cordova_android_version: "${CORDOVA_ANDROID_VERSION}"
     opts:
       title: "Android version"
       description: |-
